@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script type="text/javascript">
+
+    function run_bet(){
+      var number_plays = document.getElementById("number_plays").value;
+      var bet_amount = document.getElementById("bet_amount").value;
+      var original_sum =document.getElementById("original_sum").value;
+      var money_acumulated = original_sum;
+      for(i=0; i<number_plays-1;i++){
+      dice_number = Math.floor(Math.random() * 100) + 1;
+      money_acumulated -=bet_amount;
+      if (dice_number < 50){
+        win = bet_amount *2;
+        money_acumulated +=win;
+            document.getElementById("display_result").innerHTML="money left: "+money_acumulated ;
+
+      }else{
+        bet_amount *=2;
+        if (money_acumulated <=0){
+          document.getElementById("display_result").innerHTML="no money left, the money is:  "+money_acumulated;
+          i = number_plays-1;
+
+        }
+
+            document.getElementById("display_result").innerHTML="money left: "+money_acumulated;
+      }
+
+
+      }
+
+  };
+    </script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Simulating EOS bet without risking your money</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GJ8WxLKkg1c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <h1><font color="red">Don't risk your money</font></h1>
+    <br>
+    <br>
+    <p>This simulation of eos bet helps the player understand the nature of gambling, you can win over small number</p>
+      <p>of trials but will always lose over a big number of trials becuase the house always makes sure</p>
+      <p>the probabilities swing to their favour, try different sums with small number of trials then try a big number</p>
+      <p>of trials, the results will surprise you</p>
+      <p>each time you lose we double the bet</p>
+      <p>This specific example gives the player 49 % chance of winning and the house 51 %</p>
+      <p>you wouldn't think that 1% would have this dramatic effect over a big number of trails</p>
+    </table>
+    <input id = "bet_amount" type="text" placeholder="bet amount"name="" value="">
+    <br>
+    <input id = "original_sum" type="text" placeholder="original sum" name="" value="">
+    <br>
+    <input id = "number_plays" type="text" placeholder="number of plays"name="" value="">
+    <br>
+
+    <button onclick="run_bet()" type="button" name="button">Bet Now</button>
+    <h3>You can support me by sending me some eos on account: "fasterskills"</h3>
+    <p id ="display_result">Your result will be shown here</p>
+  </body>
+</html>
