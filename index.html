@@ -16,16 +16,17 @@
         win = bet_amount *2;
         money_acumulated +=win;
             document.getElementById("display_result").innerHTML="money left: "+money_acumulated ;
+            document.getElementById("display_result2").innerHTML="dice number is : "+dice_number;
 
       }else{
         bet_amount *=2;
         if (money_acumulated <=0){
-          document.getElementById("display_result").innerHTML="no money left, the money is:  "+money_acumulated;
+          document.getElementById("display_result").innerHTML="no money left, the money left is:  "+money_acumulated;
           i = number_plays-1;
 
         }
 
-            document.getElementById("display_result").innerHTML="money left: "+money_acumulated;
+
       }
 
 
@@ -43,7 +44,7 @@
     <br>
     <br>
     <p>This simulation of eos bet helps the player understand the nature of gambling, you can win over small number</p>
-      <p>of trials but will always lose over a big number of trials becuase the house always makes sure</p>
+      <p>of trials but will always lose over a big number of trials because the house always makes sure</p>
       <p>the probabilities swing to their favour, try different sums with small number of trials then try a big number</p>
       <p>of trials, the results will surprise you</p>
       <p>each time you lose we double the bet</p>
@@ -60,5 +61,7 @@
     <button onclick="run_bet()" type="button" name="button">Bet Now</button>
     <h3>You can support me by sending me some eos on account:<font color="red"> "fasterskills"</font></h3>
     <p id ="display_result">Your result will be shown here</p>
+    <p id ="display_result2">Your result will be shown here</p>
+
   </body>
 </html>
