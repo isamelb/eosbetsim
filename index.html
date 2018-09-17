@@ -6,6 +6,7 @@
 
     function run_bet(){
       var dice_arr=[];
+      var money_acumulated_arr=[];
       var number_plays = document.getElementById("number_plays").value;
       var bet_amount = document.getElementById("bet_amount").value;
       var original_sum =document.getElementById("original_sum").value;
@@ -13,11 +14,14 @@
       for(i=0; i<=number_plays-1;i++){
       dice_number = Math.floor(Math.random() * 100) + 1;
       dice_arr.push(dice_number);
+
       money_acumulated -=bet_amount;
+
       if (dice_number < 50){
         win = bet_amount *2;
         money_acumulated +=win;
-            document.getElementById("display_result").innerHTML="money left: "+money_acumulated ;
+
+          //  document.getElementById("display_result").innerHTML="money left: "+money_acumulated ;
 
 
       }else{
@@ -35,8 +39,11 @@
       }
 
 
-      }document.getElementById("display_result2").innerHTML="the dice thows are: "+dice_arr;
-
+      }
+        money_acumulated_arr.push(money_acumulated);
+        document.getElementById("display_result").innerHTML="money left: "+money_acumulated ;
+        document.getElementById("display_result2").innerHTML="the dice thows are: "+dice_arr;
+        document.getElementById("display_result3").innerHTML="accumulated money: " + money_acumulated_arr;
   };
     </script>
     <meta charset="utf-8">
@@ -67,6 +74,6 @@
     <h3>You can support me by sending me some eos on account:<font color="red"> "fasterskills"</font></h3>
     <p id ="display_result">Your result will be shown here</p>
     <p id ="display_result2">Your result will be shown here</p>
-
+    <p id ="display_result3">Your result will be shown here</p>
   </body>
 </html>
