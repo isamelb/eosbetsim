@@ -26,7 +26,7 @@
 
       }else{
         bet_amount *=2;
-        if (money_acumulated <=0){
+        if (bet_amount > money_acumulated){
           document.getElementById("display_result").innerHTML="no more bets possible, the money left is:  "+money_acumulated;
 
 
