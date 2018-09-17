@@ -16,12 +16,11 @@
         win = bet_amount *2;
         money_acumulated +=win;
             document.getElementById("display_result").innerHTML="money left: "+money_acumulated ;
-            document.getElementById("display_result2").innerHTML="dice number is : "+dice_number;
 
       }else{
         bet_amount *=2;
         if (money_acumulated <=0){
-          document.getElementById("display_result").innerHTML="no money left, the money left is:  "+money_acumulated;
+          document.getElementById("display_result").innerHTML="no more bets possible, the money left is:  "+money_acumulated;
           i = number_plays-1;
 
         }
