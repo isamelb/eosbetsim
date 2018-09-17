@@ -5,22 +5,28 @@
     <script type="text/javascript">
 
     function run_bet(){
+      var dice_arr=[]
       var number_plays = document.getElementById("number_plays").value;
       var bet_amount = document.getElementById("bet_amount").value;
       var original_sum =document.getElementById("original_sum").value;
       var money_acumulated = original_sum;
       for(i=0; i<number_plays-1;i++){
       dice_number = Math.floor(Math.random() * 100) + 1;
+      dice_arr.push(dice_number);
       money_acumulated -=bet_amount;
       if (dice_number < 50){
         win = bet_amount *2;
         money_acumulated +=win;
             document.getElementById("display_result").innerHTML="money left: "+money_acumulated ;
+            document.getElementById("display_result2").innerHTML="the dice thows are: "+dice_arr;
 
       }else{
         bet_amount *=2;
         if (money_acumulated <=0){
           document.getElementById("display_result").innerHTML="no more bets possible, the money left is:  "+money_acumulated;
+          document.getElementById("display_result2").innerHTML="the dice thows are: "+dice_arr;
+
+
           i = number_plays-1;
 
         }
